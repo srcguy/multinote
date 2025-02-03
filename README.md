@@ -2,6 +2,8 @@ MultiNote to apka do tworzenia notatek napisana w PHP. Chciałem sobie troche po
 <br>
 Żeby wszystko poprawnie działało stwórz użytkownika "root" bez hasła albo zmień odpowiednie dane przy `mysqli_connect`.
 <br>
+W releasach dodałem plik sql z gotową do pracy, prawię pustą bazą danych.
+<br>
 Korzystałem z <a href="https://getbootstrap.com">bootstrapa</a>.
 <br>
 Nie wiem czy będę coś dodawał :p
