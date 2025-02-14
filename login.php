@@ -15,7 +15,7 @@
     }
 
     foreach ($rows as $row) {
-        if ($_GET['login'] == $row['login'] && $_GET['pass'] == $row['pass'])
+        if ($_GET['login'] == $row['login'] && hash('sha256', $row['salt'] . $_GET['pass']) == $row['pass'])
         {
             setcookie("user_id", $row['id'], time() + (86400 * 30), "/");
             setcookie("login", $row['login'], time() + (86400 * 30), "/");

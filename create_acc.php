@@ -14,7 +14,10 @@
     }
     else
     {
-        $sql = "INSERT INTO users (login, pass) values ('". $_GET['login'] . "', '" . $_GET['pass'] . "')";
+        $salt = bin2hex(random_bytes(8));
+        $pass = $salt . $_GET['pass'];
+        $hash = hash('sha256', $pass);
+        $sql = "INSERT INTO users (login, pass, salt) values ('". $_GET['login'] . "', '" . $hash . "', '" . $salt . "')";
         $result = $conn->query($sql);
         setcookie("mess", "Account created", time() + (36800 * 60));
         header("Location: index.php");
